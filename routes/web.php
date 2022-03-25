@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\mahasiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$mhs = [
-    1 => ['nama'=>'Fiona', 'jurusan'=>'Sistem Informasi'],
-    2 => ['nama'=>'Susanti', 'jurusan'=>'Sistem Informasi'],
-    3 => ['nama'=>'Steven', 'jurusan'=>'Informatika']
-];
 
 Route::get('/', function () {
     return view('welcome',['nama'=>'Fiona', 'jurusan'=>'Sistem Informasi']);
 });
 
-Route::get('/Mahasiswa', function () {
-    return view('welcome',['nama'=>'Mahasiswa Fiona', 'jurusan'=>'Sistem Informasi']);
-});
+Route::get('/Mahasiswa', [mahasiswaController::class, 'index']);
+
+// Route::get('/Mahasiswa', function () {
+//     $mhs = [
+//         1 => ['nama'=>'Fiona', 'jurusan'=>'Sistem Informasi'],
+//         2 => ['nama'=>'Susanti', 'jurusan'=>'Sistem Informasi'],
+//         3 => ['nama'=>'Steven', 'jurusan'=>'Informatika']
+//     ];
+//     return view('listMahasiswa')->with('mhs',$mhs);
+// });
