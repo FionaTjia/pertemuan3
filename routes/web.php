@@ -20,6 +20,11 @@ Route::get('/', function () {
 
 Route::get('/Mahasiswa', [mahasiswaController::class, 'index']);
 
+Route::get('/Mahasiswa/create', [mahasiswaController::class, 'create']);
+
+//Route::get('/Mahasiswa/show', [mahasiswaController::class, 'show']);
+
+//Route::get('/Mahasiswa/edit', [mahasiswaController::class, 'edit']);
 // Route::get('/Mahasiswa', function () {
 //     $mhs = [
 //         1 => ['nama'=>'Fiona', 'jurusan'=>'Sistem Informasi'],
